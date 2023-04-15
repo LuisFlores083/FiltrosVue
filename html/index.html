@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>VUE</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/estilos.css" />
+        <script src="../js/vue.js"></script>
+    </head>
+    <body>
+        <header class="bg-success text-center text-white">
+            <span class="h2"> FILTROS VUE</span>
+        </header>
+        <section class="container text-center" id="cont">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                <input type="search" v-model="busqueda" placeholder="Buscar Juego">
+                <input type="range" min="0" max="10" v-model="minimo">
+                   <ul class="list-unstyled text-center">
+                        <h1>RANGO</h1>
+                       <li v-for="(juego, index) in ComprobarJuego" :key="index">
+                           <!---Imprimir el arreglo de datos-->
+                           {{juego.titulo}}
+                       </li>
+                       <h1>BUSQUEDA</h1>
+                       <li v-for="(juego, index) in BuscarJuego" :key="index">
+                           <!---Imprimir el arreglo de datos-->
+                           {{juego.titulo}}
+                       </li>
+                   </ul>
+                </div>
+            </div>
+            <hr/>
+ 
+        </section>
+        <footer class="bg-dark text-center text-white">
+            <span class="h2">@Luis Angel</span>
+        </footer>
+        <script src="../js/funciones.js"></script>
+    </body>
+</html>
